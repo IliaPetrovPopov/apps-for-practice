@@ -6,3 +6,4 @@ export interface BookCharacteristics {
   price: number;
   availability: boolean;
 }
+
