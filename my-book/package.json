@@ -10,9 +10,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start:build": "tsc -w",
+    "start:build": "tsc -w -p tsconfig.build.json",
     "start:run": "nodemon build/index.js",
-    "start": "concurrently npm:start:*"
+    "start": "concurrently npm:start:*",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

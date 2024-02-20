@@ -12,4 +12,4 @@ shelf.add(surroundedByIdiots)
 
 // console.log(shelf.listBooks());
 // shelf.update<number>(atomicHabits, "price", 13);
-// shelf.search("price", 15);
+shelf.search("price", 15);

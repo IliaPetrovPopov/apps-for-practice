@@ -36,7 +36,7 @@ export class BookStore {
     }
   }
 
-  search<T>(criteria: keyof Book, value: T): Book {
+  search<T extends Book[keyof Book]>(criteria: keyof Book, value: T): Book {
     const book = this._inventory.find((book) => book[criteria] === value);
 
     if (book) {
@@ -50,7 +50,7 @@ export class BookStore {
   listBooks(): string {
     const books = this._inventory.reduce((acc, curr) => {
       return (acc += `${curr.title} | Genre: ${curr.genre} | Price: ${curr.price} | Available: ${curr.availability}
-- - -\n`);
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n`);
     }, "");
 
     return books;
