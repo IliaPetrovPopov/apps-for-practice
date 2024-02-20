@@ -5,6 +5,11 @@ import { BookGenres } from "./utils/enums";
 const shelf = new BookStore();
 
 const atomicHabits = new Book("Atomic Habits", BookGenres.SelfHelp, 15, true);
+const surroundedByIdiots = new Book("Surrounded By Idiots", BookGenres.SelfHelp, 40, true);
 
 shelf.add(atomicHabits);
-shelf.update<number>(atomicHabits, "price", 14);
+shelf.add(surroundedByIdiots)
+
+// console.log(shelf.listBooks());
+// shelf.update<number>(atomicHabits, "price", 13);
+// shelf.search("price", 15);
