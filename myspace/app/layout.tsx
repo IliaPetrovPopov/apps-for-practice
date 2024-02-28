@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import NavMenu from "@/components/NavMenu/NavMenu";
+import AuthProvider from "./AuthProvider";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <NavMenu />
-        {children}
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body>
+          <NavMenu />
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
