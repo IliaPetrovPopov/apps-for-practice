@@ -3,6 +3,7 @@ import styles from "./NavMenu.module.css";
 
 import React from "react";
 import Link from "next/link";
+import { SignInButton } from "../buttons";
 
 const NavMenu = () => {
   return (
@@ -21,6 +22,9 @@ const NavMenu = () => {
 
         <li>
         <Link href={'/users'}>Users</Link>
+        </li>
+        <li>
+          <SignInButton />
         </li>
       </ul>
     </nav>
