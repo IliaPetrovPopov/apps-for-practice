@@ -6,17 +6,16 @@ import ProfileForm from "./ProfileForm";
 
 async function Dashboard() {
   const session = await getServerSession(authOptions);
-
-  console.log(session);
   
   if (!session) redirect("/api/auth/signin");
 
   const currentUserEmail = session?.user?.email!;
   const user = await prisma.user.findUnique({
     where: {
-      email: currentUserEmail,
+      email: currentUserEmail!
     },
   });
+  
   return (
     <div>
       <ProfileForm user={user} />
